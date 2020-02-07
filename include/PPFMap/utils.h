@@ -1,9 +1,7 @@
 #ifndef PPFMAP_UTILS_HH__
 #define PPFMAP_UTILS_HH__
 
-#include <thrust/extrema.h>
-#include <cuda_runtime.h>
-
+#include <PPFMap/common.h>
 #include <PPFMap/murmur.h>
 
 #define PI_32F static_cast<float>(M_PI)

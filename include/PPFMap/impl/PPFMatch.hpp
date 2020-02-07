@@ -111,6 +111,9 @@ ppfmap::PPFMatch<PointT, NormalT>::detect(const PointCloudPtr scene,
             // Compute the alpha_s angle
             const auto pt = Tsg * p2.getVector3fMap();
             float alpha_s = atan2(-pt(2), pt(1));
+            if (isnanf(alpha_s)) {
+                continue;
+            }
 
             auto similar_features = map.equal_range(ppf);
 
@@ -132,15 +135,19 @@ ppfmap::PPFMatch<PointT, NormalT>::detect(const PointCloudPtr scene,
         }
 
         // Look for the winner
-        int max_votes = 0;
-        int max_votes_idx = 0;
+        int max_votes = -1;
+        int max_votes_idx = -1;
         for (int k = 0; k < accumulator.size(); k++) {
             if (accumulator[k] > max_votes) {
                 max_votes = accumulator[k];
                 max_votes_idx = k;
             } 
             accumulator[k] = 0; // Set it to zero for next iteration
-        } 
+        }
+
+        if (max_votes < 0) {
+            continue;
+        }
 
         int max_model_i = max_votes_idx / angle_bins;
         int max_alpha = max_votes_idx % angle_bins;

@@ -1,6 +1,7 @@
 #ifndef PPFMAP_DISCRETIZED_PPF_HH__
 #define PPFMAP_DISCRETIZED_PPF_HH__
 
+#include <Eigen/Geometry>
 #include <PPFMap/murmur.h>
 #include <PPFMap/utils.h>
 

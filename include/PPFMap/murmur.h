@@ -17,7 +17,7 @@
  *  and adapted to cuda and PPF encoding.
  */
 
-#include <cuda_runtime.h>
+#include <PPFMap/common.h>
 
 /** \brief Bit-wise rotation of a 32-bit long word to the left.
  *  \param[in] x Word to rotate to the left.

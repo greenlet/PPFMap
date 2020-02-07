@@ -1,8 +1,8 @@
 #ifndef PPFMAP_POSE_HH__
 #define PPFMAP_POSE_HH__
 
-#include <Eigen/Geometry>
-#include <pcl/correspondence.h>
+#include <PPFMap/common.h>
+
 
 namespace ppfmap {
 
@@ -70,6 +70,10 @@ void clusterPoses(
 
     Eigen::Vector3f translation_average (0.0, 0.0, 0.0);
     Eigen::Vector4f rotation_average (0.0, 0.0, 0.0, 0.0);
+
+    if (cluster_votes.size() == 0) {
+        return;
+    }
 
     for (const auto& pose : pose_clusters[cluster_votes.back().second]) {
         translation_average += pose.t.translation();

@@ -1,12 +1,7 @@
 #ifndef PPFMAP_CUDA_PPFMATCH_HH__
 #define PPFMAP_CUDA_PPFMATCH_HH__
 
-#include <pcl/common/common_headers.h>
-#include <pcl/kdtree/kdtree_flann.h>
-#include <pcl/correspondence.h>
-
-#include <thrust/host_vector.h>
-
+#include <PPFMap/common.h>
 #include <PPFMap/utils.h>
 #include <PPFMap/Pose.h>
 #include <PPFMap/cuda_map.h>

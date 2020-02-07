@@ -1,16 +1,12 @@
 #ifndef PPFMAP_PPFMATCH_HH__
 #define PPFMAP_PPFMATCH_HH__
 
-#include <unordered_map>
-
-#include <pcl/common/common_headers.h>
-#include <pcl/kdtree/kdtree_flann.h>
-#include <pcl/correspondence.h>
-
+#include <PPFMap/common.h>
 #include <PPFMap/utils.h>
 #include <PPFMap/Pose.h>
 #include <PPFMap/DiscretizedPPF.h>
 #include <PPFMap/ppf_cuda_calls.h>
+
 
 
 namespace ppfmap {

@@ -1,8 +1,7 @@
 #ifndef PPFMAP_PPFMAP_HH__
 #define PPFMAP_PPFMAP_HH__
 
-#include <unordered_map>
-
+#include <PPFMap/common.h>
 #include <PPFMap/DiscretizedPPF.h>
 
 namespace ppfmap {

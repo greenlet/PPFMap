@@ -1,18 +1,7 @@
 #ifndef PPFMAP_MAP_HH__
 #define PPFMAP_MAP_HH__
 
-#include <iostream>
-#include <cuda_runtime.h>
-#include <thrust/host_vector.h>
-#include <thrust/device_vector.h>
-#include <thrust/sort.h>
-#include <thrust/scan.h>
-#include <thrust/binary_search.h>
-#include <thrust/transform_reduce.h>
-#include <thrust/iterator/constant_iterator.h>
-#include <thrust/iterator/zip_iterator.h>
-#include <boost/shared_ptr.hpp>
-
+#include <PPFMap/common.h>
 #include <PPFMap/utils.h>
 
 

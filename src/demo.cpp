@@ -1,21 +1,7 @@
-#include <chrono>
-#include <random>
-#include <algorithm>
-
-#include <pcl/common/geometry.h>
-#include <pcl/io/pcd_io.h>
-#include <pcl/correspondence.h>
-#include <pcl/common/time.h>
-#include <pcl/common/transforms.h>
-#include <pcl/common/common_headers.h>
-#include <pcl/features/normal_3d.h>
-#include <pcl/filters/voxel_grid.h>
-#include <pcl/filters/extract_indices.h>
-#include <pcl/visualization/pcl_visualizer.h>
-
 #include <PPFMap/PPFMap.h>
 #include <PPFMap/PPFMatch.h>
 #include <PPFMap/CudaPPFMatch.h>
+#include "common.h"
 
 
 int main(int argc, char *argv[]) {
@@ -178,7 +164,7 @@ int main(int argc, char *argv[]) {
         viewer->removePointCloud("model_transformed");
         pcl::PointCloud<pcl::PointNormal>::Ptr model_transformed(new pcl::PointCloud<pcl::PointNormal>());
         pcl::transformPointCloud(*model_downsampled, *model_transformed, T);
-        pcl::visualization::PointCloudColorHandlerCustom<pcl::PointNormal> green(model_transformed, 0, 255, 0);
+        pcl::visualization::PointCloudColorHandlerCustom<pcl::PointNormal> green(model_transformed, 1, 255, 0);
         viewer->addPointCloud<pcl::PointNormal>(model_transformed, green, "model_transformed");
 
         /*

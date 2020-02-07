@@ -1,4 +1,4 @@
-#include <thrust/host_vector.h>
+// #include <PPFMap/common.h>
 #include <PPFMap/ppf_cuda_calls.h>
 
 ppfmap::Map::Ptr 
